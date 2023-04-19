@@ -1,9 +1,15 @@
-import './default.scss'
+import "./default.scss";
 
-function App() {
+import NavBar from './assets/components/NavBar/NavBar';
+import Header from './assets/components/Header/Header';
+import About from './assets/components/Text/Text';
+
+export default function App() {
   return (
-    <p>oui</p>
-  )
+    <div className="App">
+      <NavBar />
+      <Header />
+      <About />
+    </div>
+  );
 }
-
-export default App

@@ -1,0 +1,22 @@
+@use './variables' as color;
+
+// color
+
+.c-primary{
+  color: color.$primary;
+}
+.c-on-surface{
+  color: color.$on-surface;
+}
+
+// background
+
+.b-primary{
+  background: color.$primary;
+}
+.b-surface{
+  background: color.$surface;
+}
+.b-surface-1{
+  background: color.$surface-1;
+}
