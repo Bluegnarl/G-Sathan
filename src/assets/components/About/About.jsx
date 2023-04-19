@@ -1,7 +1,7 @@
-export default function About() {
-  return(
-    <div>
+import Text from '../Text/Text'
 
-    </div>
+export default function About({ appSize }) {
+  return(
+    <Text appSize={appSize} />
   )
 }

@@ -1,15 +1,28 @@
 import "./default.scss";
 
+import { useRef } from "react";
+
 import NavBar from './assets/components/NavBar/NavBar';
 import Header from './assets/components/Header/Header';
-import About from './assets/components/Text/Text';
+import { useEffect } from "react";
+import { useState } from "react";
 
 export default function App() {
+  const appRef = useRef(null);
+  
+  const [appSize, setAppSize] = useState('');
+  
+  useEffect(() => {
+    setAppSize(appRef.current.getBoundingClientRect().width);
+    window.addEventListener('resize', () => {
+      setAppSize(appRef.current.getBoundingClientRect().width);
+    })
+  }, [])
+  
   return (
-    <div className="App">
+    <div className="App" ref={appRef}>
       <NavBar />
-      <Header />
-      <About />
+      <Header appSize={appSize}/>
     </div>
   );
 }
