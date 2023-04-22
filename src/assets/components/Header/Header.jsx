@@ -1,4 +1,4 @@
-import backgroundimage from "../../images/backgroundimage2.png";
+import backgroundimage from "../../images/backgroundimage.png";
 import About from "../About/About";
 
 export default function Header({ appSize }) {
@@ -7,7 +7,7 @@ export default function Header({ appSize }) {
       className={`${
         appSize >= 950 ? "d-flex-row b-surface" : "d-flex-column-reverse b-surface-1"
       } w-full`}
-      style={{ height: appSize < 950 ? "auto" : appSize < 1100 ? "50%" : appSize < 1200 ? "55%" : appSize < 1650 ? "60%" : appSize < 1650 ? "70%" : "85%" }}
+      style={{ height: appSize < 650 ? "auto" : appSize < 950 ? "800px" : appSize < 1100 ? "55%" : appSize < 1200 ? "65%" : '100%' }}
     >
       <div className='d-flex-row jc-center' style={{ flex: '1' }}>
         <About appSize={appSize} />
@@ -15,9 +15,11 @@ export default function Header({ appSize }) {
       <img
         src={backgroundimage}
         style={
-          appSize >= 950
-            ? { width: "50%", height: "100%", objectFit: "cover" }
-            : { width: "auto", height: "auto", objectFit: "cover" }
+          appSize < 650
+            ? { width: "auto", height: "auto", objectFit: "cover" }
+            : appSize < 950
+            ? {  width: "100%", height: "700px", objectFit: "cover", objectPosition: '0 0' }
+            : {  width: "50%", height: "100%", objectFit: "cover" }
         }
       />
       {/* <div

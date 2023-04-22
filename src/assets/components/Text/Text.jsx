@@ -3,26 +3,72 @@ import redlogo from "../../images/redlogo.png";
 export default function Text({ appSize }) {
   return (
     <div
-      className={`${ appSize >= 950 ? 'p-48' : 'p-32'} d-flex-column jc-center`}
+      className={`${appSize >= 950 ? "p-48" : "p-32"} d-flex-column jc-center`}
       style={
-        appSize >= 950
+        appSize < 950
           ? { maxWidth: "800px" }
-          : { flex: "auto", maxWidth: "800px", alignSelf: "center" }
+          : appSize < 2000
+          ? { maxWidth: "900px" }
+          : { maxWidth: "1400px" }
       }
     >
-      <div className={`${ appSize < 391 ? 'pt-20 pb-16' : appSize < 1100 ? 'pt-24 pb-20' : 'pt-24 pb-28' } d-flex-row`}>
+      <div
+        className={`${
+          appSize < 391
+            ? "pt-20 pb-16"
+            : appSize < 1100
+            ? "pt-24 pb-20"
+            : "pt-24 pb-28"
+        } d-flex-row`}
+      >
         <div className="pos-relative d-flex-row ai-center jc-center">
-          <p className={`${ appSize < 391 ? 'fs-28' : appSize < 1100 ? 'fs-32' : appSize < 1650 ? 'fs-40' : 'fs-48' } ff-title`} style={{ zIndex: "1" }}>
+          <p
+            className={`${
+              appSize < 391
+                ? "fs-28"
+                : appSize < 1100
+                ? "fs-32"
+                : appSize < 1650
+                ? "fs-40"
+                : appSize < 2000
+                ? "fs-48"
+                : "fs-56"
+            } ff-title`}
+            style={{ zIndex: "1" }}
+          >
             G. Sathan
           </p>
           <img
             src={redlogo}
             className="pos-absolute"
-            style={{ width: appSize < 391 ? '37px' : appSize < 1100 ? '45px' : appSize < 1650 ? '60px' : '65px' }}
+            style={{
+              width:
+                appSize < 391
+                  ? "37px"
+                  : appSize < 1100
+                  ? "45px"
+                  : appSize < 1650
+                  ? "60px"
+                  : appSize < 2000
+                  ? "70px"
+                  : "80px",
+            }}
           />
         </div>
       </div>
-      <div className={`${appSize < 391 ? "fs-11" : appSize < 1100 ? "fs-14" : appSize < 1650 ? "fs-16" : 'fs-18' } w-full fw-300`}>
+      <div
+        className={`${
+          appSize < 391
+            ? "fs-11"
+            : appSize < 1100
+            ? "fs-14"
+            : appSize < 1650
+            ? "fs-16"
+            : appSize < 2000
+            ? "fs-18"
+            : "fs-24"
+        } w-full fw-300`}
+      >
         <p className="w-full mb-5">
           J’ai débuté mon activité de tatouage il y a 5 ans après avoir été
           proche du milieu pendant de nombreuses années.
