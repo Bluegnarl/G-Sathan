@@ -38,10 +38,19 @@ export default function Header({ appSize }) {
       <div className="d-flex-row jc-center" style={{ flex: "1" }}>
         <About appSize={appSize} visible={visible} />
       </div>
-      <img
+
+        <img
         src={backgroundimage}
         style={
-          appSize < 250
+          appSize < 180
+            ? {
+              width: "auto",
+              height: visible ? '150px' : "0",
+              objectFit: "cover",
+              opacity: visible ? "1" : "0",
+              transition: "all .8s",
+            }
+            : appSize < 250
             ? {
               width: "auto",
               height: visible ? '200px' : "0",
@@ -84,7 +93,7 @@ export default function Header({ appSize }) {
             : appSize < 950
             ? {
                 width: "100%",
-                height: visible ? '400px' : "0",
+                height: visible ? '500px' : "0",
                 objectFit: "cover",
                 objectPosition: "0 0",
                 opacity: visible ? "1" : "0",
@@ -97,8 +106,9 @@ export default function Header({ appSize }) {
                 opacity: visible ? "1" : "0",
                 transition: "all .8s",
               }
-        }
-      />
+          }
+        />
+
       {/* <div
         className="b-cover d-flex-row ai-center jc-center"
         style={{
