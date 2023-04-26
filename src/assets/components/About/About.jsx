@@ -1,15 +1,23 @@
 import redlogo from "../../images/redlogo.png";
 
-export default function Text({ appSize }) {
+export default function Text({ appSize, visible }) {
   return (
     <div
-      className={`${ appSize < 300 ? "p-16" : appSize < 950 ? "p-32" : appSize < 1650 ? "p-48" : "p-64" } d-flex-column jc-center`}
+      className={`${
+        appSize < 300
+          ? "p-16"
+          : appSize < 950
+          ? "p-32"
+          : appSize < 1650
+          ? "p-48"
+          : "p-64"
+      } d-flex-column jc-center`}
       style={
         appSize < 950
-          ? { maxWidth: "800px" }
+          ? { maxWidth: "800px", transition: 'all .8s', opacity: visible ? '1' : '0' }
           : appSize < 2000
-          ? { maxWidth: "900px" }
-          : { maxWidth: "1500px" }
+          ? { maxWidth: "900px", transition: 'all .8s', opacity: visible ? '1' : '0' }
+          : { maxWidth: "1500px", transition: 'all .8s', opacity: visible ? '1' : '0' }
       }
     >
       <div
@@ -49,19 +57,19 @@ export default function Text({ appSize }) {
             className="pos-absolute"
             style={{
               width:
-              appSize < 160
-                ? "24px"
-                : appSize < 300
-                ? "32px"
-                : appSize < 391
-                ? "37px"
-                : appSize < 1100
-                ? "45px"
-                : appSize < 1650
-                ? "60px"
-                : appSize < 2000
-                ? "70px"
-                : "80px",
+                appSize < 160
+                  ? "24px"
+                  : appSize < 300
+                  ? "32px"
+                  : appSize < 391
+                  ? "37px"
+                  : appSize < 1100
+                  ? "45px"
+                  : appSize < 1650
+                  ? "60px"
+                  : appSize < 2000
+                  ? "70px"
+                  : "80px",
             }}
           />
         </div>
