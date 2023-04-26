@@ -7,7 +7,7 @@ export default function Header({ appSize }) {
       className={`${
         appSize >= 950 ? "d-flex-row b-surface" : "d-flex-column-reverse b-surface-1"
       } w-full`}
-      style={{ height: appSize < 950 ? "auto" : appSize < 1100 ? "55%" : appSize < 1200 ? "65%" : '100%' }}
+      style={{ height: appSize < 950 ? "auto" : appSize < 1100 ? "55%" : appSize < 1200 ? "65%" : '100%', minHeight: '300px' }}
     >
       <div className='d-flex-row jc-center' style={{ flex: '1' }}>
         <About appSize={appSize} />
