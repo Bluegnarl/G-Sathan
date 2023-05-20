@@ -1,4 +1,4 @@
-import redlogo from "../../images/redlogo.png";
+import redlogo from "../../images/redlogo.webp";
 
 export default function About({ appWidth, visible, display }) {
   return (

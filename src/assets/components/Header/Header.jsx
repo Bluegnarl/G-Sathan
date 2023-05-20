@@ -29,63 +29,63 @@ export default function Header({ visible, appWidth, appHeight }) {
                 width: visible && "100%",
                 height: visible ? "150px" : "0",
                 opacity: visible ? "1" : "0",
-                transition: "height .8s",
+                transition: "height .8s ease, opacity .8s ease",
               }
             : appWidth < 250
             ? {
                 width: visible && "100%",
                 height: visible ? "200px" : "0",
                 opacity: visible ? "1" : "0",
-                transition: "height .8s",
+                transition: "height .8s ease, opacity .8s ease",
               }
             : appWidth < 300
             ? {
                 width: visible && "100%",
                 height: visible ? "250px" : "0",
                 opacity: visible ? "1" : "0",
-                transition: "height .8s",
+                transition: "height .8s ease, opacity .8s ease",
               }
             : appWidth < 350
             ? {
                 width: visible && "100%",
                 height: visible ? "300px" : "0",
                 opacity: visible ? "1" : "0",
-                transition: "height .8s",
+                transition: "height .8s ease, opacity .8s ease",
               }
             : appWidth < 391
             ? {
                 width: visible && "100%",
                 height: visible ? "350px" : "0",
                 opacity: visible ? "1" : "0",
-                transition: "height .8s",
+                transition: "height .8s ease, opacity .8s ease",
               }
             : appWidth < 450
             ? {
                 width: visible && "100%",
                 height: visible ? "400px" : "0px",
                 opacity: visible ? "1" : "0",
-                transition: "height .8s",
+                transition: "height .8s ease, opacity .8s ease",
               }
             : appWidth < 650
             ? {
                 width: visible && "100%",
                 height: visible ? "500px" : "0",
                 opacity: visible ? "1" : ".5",
-                transition: "height .8s",
+                transition: "height .8s ease, opacity .8s ease",
               }
             : appWidth < 950
             ? {
                 width: visible && "100%",
                 height: visible ? "600px" : "0",
                 opacity: visible ? "1" : ".5",
-                transition: "height .8s",
+                transition: "height .8s ease, opacity .8s ease",
               }
             : {
                 width: visible && "50%",
                 height: '100%',
                 objectFit: 'cover',
                 opacity: visible ? "1" : ".5",
-                transition: 'width .8s'
+                transition: 'width .8s ease, opacity .8s ease'
               }
         }
       >
