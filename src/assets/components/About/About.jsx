@@ -1,32 +1,32 @@
 import redlogo from "../../images/redlogo.png";
 
-export default function Text({ appSize, visible }) {
+export default function About({ appWidth, visible, display }) {
   return (
     <div
       className={`${
-        appSize < 300
+        appWidth < 300
           ? "p-16"
-          : appSize < 950
+          : appWidth < 950
           ? "p-32"
-          : appSize < 1650
+          : appWidth < 1650
           ? "p-48"
           : "p-64"
       } d-flex-column jc-center`}
       style={
-        appSize < 950
-          ? { maxWidth: "800px", transition: 'all .8s', opacity: visible ? '1' : '0' }
-          : appSize < 2000
-          ? { maxWidth: "900px", transition: 'all .8s', opacity: visible ? '1' : '0' }
-          : { maxWidth: "1500px", transition: 'all .8s', opacity: visible ? '1' : '0' }
+        appWidth < 950
+          ? { maxWidth: "800px", transition: 'opacity .8s', opacity: visible ? '1' : '0' }
+          : appWidth < 2000
+          ? { maxWidth: "900px", display: display, transition: 'opacity .8s', opacity: visible ? '1' : '0' }
+          : { maxWidth: "1500px", display: display, transition: 'opacity .8s', opacity: visible ? '1' : '0' }
       }
     >
       <div
         className={`${
-          appSize < 300
+          appWidth < 300
             ? "pt-16 pb-12"
-            : appSize < 391
+            : appWidth < 391
             ? "pt-20 pb-16"
-            : appSize < 1100
+            : appWidth < 1100
             ? "pt-24 pb-20"
             : "pt-24 pb-28"
         } d-flex-row`}
@@ -34,17 +34,17 @@ export default function Text({ appSize, visible }) {
         <div className="pos-relative d-flex-row ai-center jc-center">
           <p
             className={`${
-              appSize < 160
+              appWidth < 160
                 ? "fs-20"
-                : appSize < 300
+                : appWidth < 300
                 ? "fs-24"
-                : appSize < 391
+                : appWidth < 391
                 ? "fs-28"
-                : appSize < 1100
+                : appWidth < 1100
                 ? "fs-32"
-                : appSize < 1650
+                : appWidth < 1650
                 ? "fs-40"
-                : appSize < 2000
+                : appWidth < 2000
                 ? "fs-48"
                 : "fs-56"
             } ff-title`}
@@ -57,17 +57,17 @@ export default function Text({ appSize, visible }) {
             className="pos-absolute"
             style={{
               width:
-                appSize < 160
+                appWidth < 160
                   ? "24px"
-                  : appSize < 300
+                  : appWidth < 300
                   ? "32px"
-                  : appSize < 391
+                  : appWidth < 391
                   ? "37px"
-                  : appSize < 1100
+                  : appWidth < 1100
                   ? "45px"
-                  : appSize < 1650
+                  : appWidth < 1650
                   ? "60px"
-                  : appSize < 2000
+                  : appWidth < 2000
                   ? "70px"
                   : "80px",
             }}
@@ -76,17 +76,17 @@ export default function Text({ appSize, visible }) {
       </div>
       <div
         className={`${
-          appSize < 160
+          appWidth < 160
             ? "fs-7"
-            : appSize < 300
+            : appWidth < 300
             ? "fs-9"
-            : appSize < 391
+            : appWidth < 391
             ? "fs-12"
-            : appSize < 1100
+            : appWidth < 1100
             ? "fs-14"
-            : appSize < 1650
+            : appWidth < 1650
             ? "fs-16"
-            : appSize < 2000
+            : appWidth < 2000
             ? "fs-18"
             : "fs-24"
         } w-full fw-300`}
