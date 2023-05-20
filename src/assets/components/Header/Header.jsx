@@ -70,21 +70,21 @@ export default function Header({ visible, appWidth, appHeight }) {
             ? {
                 width: visible && "100%",
                 height: visible ? "500px" : "0",
-                opacity: visible ? "1" : ".5",
+                opacity: visible ? "1" : "0",
                 transition: "height .8s ease, opacity .8s ease",
               }
             : appWidth < 950
             ? {
                 width: visible && "100%",
                 height: visible ? "600px" : "0",
-                opacity: visible ? "1" : ".5",
+                opacity: visible ? "1" : "0",
                 transition: "height .8s ease, opacity .8s ease",
               }
             : {
                 width: visible && "50%",
                 height: '100%',
                 objectFit: 'cover',
-                opacity: visible ? "1" : ".5",
+                opacity: visible ? "1" : "0",
                 transition: 'width .8s ease, opacity .8s ease'
               }
         }
