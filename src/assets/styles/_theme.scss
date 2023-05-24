@@ -8,6 +8,9 @@
 .c-on-surface{
   color: color.$on-surface;
 }
+.c-on-surface-variant{
+  color: color.$on-surface-variant;
+}
 
 // background
 
@@ -22,4 +25,7 @@
 }
 .b-surface-2{
   background: color.$surface-2;
+}
+.b-test{
+  background: #2c2c2c;
 }

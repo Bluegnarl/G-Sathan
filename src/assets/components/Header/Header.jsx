@@ -12,10 +12,18 @@ export default function Header({ visible, appWidth, appHeight }) {
       style={{
         minHeight:
           appWidth < 950
-            ? "auto"
+            ? 'auto'
             : appWidth < 1200
-            ? "65%"
-            : "100%",
+            ? appHeight < 600
+            ? '400px'
+            : '65%'
+            : '100%'
+        , maxHeight:
+          appWidth < 950
+            ? '600px'
+            : appWidth < 1200
+            ? '800px'
+            : 'auto'
       }}
     >
       <div className="d-flex-row jc-center" style={{ flex: '1', display: appWidth < 950 ? 'none' : 'flex' }}>

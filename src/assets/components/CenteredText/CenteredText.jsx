@@ -1,6 +1,6 @@
 import redlogo from "../../images/redlogo.webp";
 
-export default function About({ appWidth, visible, display }) {
+export default function CenteredText({ appWidth, visible, title, content1, content2 }) {
   return (
     <div
       className={`${
@@ -11,13 +11,13 @@ export default function About({ appWidth, visible, display }) {
           : appWidth < 1650
           ? "p-48"
           : "p-64"
-      } d-flex-column jc-center`}
+      } d-flex-column ai-center`}
       style={
         appWidth < 950
-          ? { maxWidth: "850px", transition: 'opacity .8s', opacity: visible ? '1' : '0' }
+          ? { transition: 'opacity .8s', opacity: visible ? '1' : '0' }
           : appWidth < 2000
-          ? { maxWidth: "900px", display: display, transition: 'opacity .8s', opacity: visible ? '1' : '0' }
-          : { maxWidth: "1500px", display: display, transition: 'opacity .8s', opacity: visible ? '1' : '0' }
+          ? { transition: 'opacity .8s', opacity: visible ? '1' : '0' }
+          : { transition: 'opacity .8s', opacity: visible ? '1' : '0' }
       }
     >
       <div
@@ -50,7 +50,7 @@ export default function About({ appWidth, visible, display }) {
             } ff-title`}
             style={{ zIndex: "1" }}
           >
-            G. Sathan
+            {title}
           </p>
           <img
             src={redlogo}
@@ -91,19 +91,8 @@ export default function About({ appWidth, visible, display }) {
             : "fs-24"
         } w-full fw-300`}
       >
-        <p className="w-full mb-5">
-          J’ai débuté mon activité de tatouage il y a 5 ans après avoir été
-          proche du milieu pendant de nombreuses années.
-        </p>
-        <p className="w-full mb-5">
-          Bien que n’ayant pas de formation de dessinateur mais une affinité
-          marqué pour les arts plastiques, c’est instantanément que j’ai compris
-          que ce métier était fait pour moi.
-        </p>
-        <p className="w-full">
-          Une fois débarrassé de tous les préjugés, c’est un métier qui se
-          révèle très complet et au sommet, à mon sens en tout cas, de la
-          collaboration entre le client et l’artiste.
+        <p className="d-flex-column w-full ta-center">
+          {content1}<br/>{content2}
         </p>
       </div>
     </div>
