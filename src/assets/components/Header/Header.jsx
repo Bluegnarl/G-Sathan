@@ -1,4 +1,5 @@
 import headerImage from "../../images/header.webp";
+import logo from "../../images/logo.svg";
 import About from "../About/About";
 
 export default function Header({ visible, appWidth, appHeight }) {
@@ -12,25 +13,24 @@ export default function Header({ visible, appWidth, appHeight }) {
       style={{
         minHeight:
           appWidth < 950
-            ? 'auto'
+            ? "auto"
             : appWidth < 1200
             ? appHeight < 600
-            ? '400px'
-            : '65%'
-            : '100%'
-        , maxHeight:
-          appWidth < 950
-            ? '600px'
-            : appWidth < 1200
-            ? '800px'
-            : 'auto'
+              ? "400px"
+              : "65%"
+            : "100%",
+        maxHeight:
+          appWidth < 950 ? "600px" : appWidth < 1200 ? "800px" : "auto",
       }}
     >
-      <div className="d-flex-row jc-center" style={{ flex: '1', display: appWidth < 950 ? 'none' : 'flex' }}>
+      <div
+        className="d-flex-row jc-center"
+        style={{ flex: "1", display: appWidth < 950 ? "none" : "flex" }}
+      >
         <About appWidth={appWidth} visible={visible} />
       </div>
       <div
-        className="pos-relative w-zero"
+        className="pos-relative w-zero d-flex-row ai-center jc-center overflow-hidden"
         style={
           appWidth < 180
             ? {
@@ -90,10 +90,10 @@ export default function Header({ visible, appWidth, appHeight }) {
               }
             : {
                 width: visible && "50%",
-                height: '100%',
-                objectFit: 'cover',
+                height: "100%",
+                objectFit: "cover",
                 opacity: visible ? "1" : "0",
-                transition: 'width .8s ease, opacity .8s ease'
+                transition: "width .8s ease, opacity .8s ease",
               }
         }
       >
@@ -118,23 +118,34 @@ export default function Header({ visible, appWidth, appHeight }) {
           className="pos-absolute"
           style={
             appWidth < 950
-            ? {
-              top: "0",
-              right: "0",
-              bottom: "0",
-              left: "0",
-              background:
-                "linear-gradient(0deg, rgba(9, 9, 9, 1) 0%, rgba(0, 0, 0, 0) 10%)"
-            } 
-            : {
-            top: "0",
-            right: "0",
-            bottom: "0",
-            left: "0",
-            background:
-              "linear-gradient(90deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 30%)",
-          }}
+              ? {
+                  top: "0",
+                  right: "0",
+                  bottom: "0",
+                  left: "0",
+                  background:
+                    "linear-gradient(0deg, rgba(9, 9, 9, 1) 0%, rgba(0, 0, 0, 0) 10%)",
+                }
+              : {
+                  top: "0",
+                  right: "0",
+                  bottom: "0",
+                  left: "0",
+                  background:
+                    "linear-gradient(90deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 30%)",
+                }
+          }
         ></div>
+        <div className="pos-absolute d-flex-row ai-center">
+          <h1 className={`${ appWidth < 180 ? 'fs-12' : appWidth < 200 ? 'fs-14' : appWidth < 250 ? 'fs-16' : appWidth < 300 ? 'fs-20' : appWidth < 350 ? 'fs-22' : appWidth < 391 ? 'fs-24' : appWidth < 430 ? 'fs-28' : appWidth < 490 ? 'fs-32' : appWidth < 550 ? 'fs-36' : appWidth < 650 ? 'fs-40' : appWidth < 950 ? 'fs-48' : appWidth < 1200 ? 'fs-40' : appWidth < 1500 ? 'fs-48' : 'fs-56'} ff-title fw-500 box-shadow`}>tattoos</h1>
+          <img
+            className={`${ appWidth < 250 ? 'pl-8' : appWidth < 391 ? 'pl-12' : 'pl-20' } box-shadow transition-600`}
+            style={{ width: appWidth < 180 ? '50px' : appWidth < 200 ? '55px' : appWidth < 220 ? '60px' : appWidth < 250 ? '70px' : appWidth < 300 ? '80px' : appWidth < 350 ? '90px' : appWidth < 391 ? '110px' : appWidth < 430 ? '130px' : appWidth < 490 ? '140px' : appWidth < 550 ? '160px' : appWidth < 650 ? '180px' : appWidth < 950 ? '200px' : appWidth < 1200 ? '140px' : appWidth < 1500 ? '200px' : '250px' }}
+            src={logo}
+            alt="Tattoos Artworks"
+          />
+          <h1 className={`${ appWidth < 180 ? 'fs-12' : appWidth < 200 ? 'fs-14' : appWidth < 250 ? 'fs-16' : appWidth < 300 ? 'fs-20' : appWidth < 350 ? 'fs-22' : appWidth < 391 ? 'fs-24' : appWidth < 430 ? 'fs-28' : appWidth < 490 ? 'fs-32' : appWidth < 550 ? 'fs-36' : appWidth < 650 ? 'fs-40' : appWidth < 950 ? 'fs-48' : appWidth < 1200 ? 'fs-40' : appWidth < 1500 ? 'fs-40' : 'fs-56'} ff-title fw-500 box-shadow`} >artworks</h1>
+        </div>
       </div>
     </div>
   );

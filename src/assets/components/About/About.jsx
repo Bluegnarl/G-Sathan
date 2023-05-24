@@ -26,9 +26,9 @@ export default function About({ appWidth, visible, display }) {
             ? "pt-16 pb-12"
             : appWidth < 391
             ? "pt-20 pb-16"
-            : appWidth < 1100
+            : appWidth < 950
             ? "pt-24 pb-20"
-            : "pt-24 pb-28"
+            : "pb-28"
         } d-flex-row`}
       >
         <div className="pos-relative d-flex-row ai-center jc-center">

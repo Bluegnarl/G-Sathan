@@ -1,4 +1,4 @@
-import redlogo from "../../images/redlogo.webp";
+import redstar from "../../images/redstar.svg";
 
 export default function CenteredText({ appWidth, visible, title, content1, content2 }) {
   return (
@@ -23,12 +23,12 @@ export default function CenteredText({ appWidth, visible, title, content1, conte
       <div
         className={`${
           appWidth < 300
-            ? "pt-16 pb-12"
+            ? "pb-12"
             : appWidth < 391
-            ? "pt-20 pb-16"
+            ? "pb-16"
             : appWidth < 1100
-            ? "pt-24 pb-20"
-            : "pt-24 pb-28"
+            ? "pb-20"
+            : "pb-28"
         } d-flex-row`}
       >
         <div className="pos-relative d-flex-row ai-center jc-center">
@@ -53,23 +53,23 @@ export default function CenteredText({ appWidth, visible, title, content1, conte
             {title}
           </p>
           <img
-            src={redlogo}
+            src={redstar}
             className="pos-absolute"
             style={{
               width:
                 appWidth < 160
-                  ? "24px"
-                  : appWidth < 300
-                  ? "32px"
-                  : appWidth < 391
-                  ? "37px"
-                  : appWidth < 1100
-                  ? "45px"
-                  : appWidth < 1650
-                  ? "60px"
-                  : appWidth < 2000
-                  ? "70px"
-                  : "80px",
+                ? "35px"
+                : appWidth < 300
+                ? "45px"
+                : appWidth < 391
+                ? "55px"
+                : appWidth < 1100
+                ? "65px"
+                : appWidth < 1650
+                ? "80px"
+                : appWidth < 2000
+                ? "100px"
+                : "120px",
             }}
           />
         </div>
@@ -92,7 +92,7 @@ export default function CenteredText({ appWidth, visible, title, content1, conte
         } w-full fw-300`}
       >
         <p className="d-flex-column w-full ta-center">
-          {content1}<br/>{content2}
+          {content1}{appWidth > 605 ? (<br/>) : (' ')}{content2}
         </p>
       </div>
     </div>

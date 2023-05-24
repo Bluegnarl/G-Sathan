@@ -1,5 +1,5 @@
 import { illustrations } from "../../datas/illustrations";
-import redlogo from "../../images/redlogo.webp";
+import redstar from "../../images/redstar.svg";
 
 export default function Portfolio({ appWidth }) {
   return (
@@ -13,7 +13,7 @@ export default function Portfolio({ appWidth }) {
           : appWidth < 1650
           ? "p-48"
           : "p-64")
-      } d-flex-column w-full h-full`}
+      } d-flex-column w-full`}
     >
       <div
         className={`${
@@ -49,29 +49,29 @@ export default function Portfolio({ appWidth }) {
             Portfolio
           </p>
           <img
-              src={redlogo}
+              src={redstar}
               className="pos-absolute"
               style={{
                 width:
                   appWidth < 160
-                    ? "24px"
+                    ? "35px"
                     : appWidth < 300
-                    ? "32px"
-                    : appWidth < 391
-                    ? "37px"
-                    : appWidth < 1100
                     ? "45px"
+                    : appWidth < 391
+                    ? "55px"
+                    : appWidth < 1100
+                    ? "65px"
                     : appWidth < 1650
-                    ? "60px"
+                    ? "80px"
                     : appWidth < 2000
-                    ? "70px"
-                    : "80px",
+                    ? "100px"
+                    : "120px",
               }}
             />
           </div>
       </div>
-      <div className="d-flex-column w-full jc-space-between" style={{ height: '800px' }}>
-        <div className="d-flex-row w-full h-full jc-center b-test br-8"></div>
+      <div className="d-flex-column w-full jc-space-between h-full" >
+        <div className="d-flex-row w-full h-full jc-center b-test br-8" style={{ minHeight: '60vh' }}></div>
       </div>
     </div>
   );

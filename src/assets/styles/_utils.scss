@@ -178,8 +178,14 @@
 .pl-8{
   padding-left: 0.8rem;
 }
+.pl-12{
+  padding-left: 1.2rem;
+}
 .pl-16{
   padding-left: 1.6rem;
+}
+.pl-20{
+  padding-left: 2rem;
 }
 .pl-24{
   padding-left: 2.4rem;
@@ -448,4 +454,20 @@
 
 .overflow-hidden{
   overflow: hidden;
+}
+
+// box-shadow
+
+.box-shadow{
+  filter: drop-shadow(3px 3px 3px rgba(0,0,0,1));
+}
+
+// transition
+
+.transition-800{
+  transition: all .8s ease-in;
+}
+
+.transition-600{
+  transition: all .6s ease-in;
 }
