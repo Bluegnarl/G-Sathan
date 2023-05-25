@@ -6,9 +6,10 @@ export default function ContactInformations({
   title,
   content,
   iconWidth,
+  className = ''
 }) {
   return (
-    <div className="d-flex-column m-16">
+    <div className={`d-flex-column m-16 ${className}`}>
       <div className={`${ appWidth < 391 ? 'mb-5' : appWidth < 950 ? 'mb-8' : 'mb-16' } pos-relative d-flex-row ai-center jc-center`}>
         <img src={etiquette} style={{ width: appWidth < 391 ? '35px' : appWidth < 1100 ? '50px' : appWidth < 1650 ? '65px' : '70px' }} />
         <img
@@ -42,9 +43,9 @@ export default function ContactInformations({
           className={`${
             appWidth < 160
               ? "fs-5"
-              : appWidth < 300
+              : appWidth < 330
               ? "fs-7"
-              : appWidth < 391
+              : appWidth < 425
               ? "fs-9"
               : appWidth < 1100
               ? "fs-11"

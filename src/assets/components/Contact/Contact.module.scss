@@ -1,11 +1,38 @@
 @use '../../styles/variables' as colors;
 
+.contactInformations{
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". . ."; 
+}
+
 .formButton{
   border: 2px solid #990A0A;
-  transition: all .4s;
+  transition: all .3  s;
   background-color: colors.$surface-1;
   &:hover{
     cursor: pointer;
     background-color: colors.$primary;
   }
+}
+
+@media screen and (max-width: 270px) {
+  .contactInformations{
+      display: flex;
+      flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 625px) {
+  .contactInformations{
+      grid-template-columns: 1fr 1fr; 
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: 
+        ". ."
+        "agenda agenda"; 
+    }
+    .agenda { grid-area: agenda; }
 }
