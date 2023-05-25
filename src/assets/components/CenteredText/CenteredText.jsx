@@ -1,8 +1,24 @@
+import { useState, useEffect, useRef } from "react";
+
 import redstar from "../../images/redstar.svg";
 
-export default function CenteredText({ appWidth, visible, title, content1, content2 }) {
+export default function CenteredText({ appWidth, title, content1, content2 }) {
+  const centeredTextRef = useRef(null);
+  
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.map((entry) => {
+        entry.isIntersecting &&
+          (setVisible(entry.isIntersecting), observer.unobserve(entry.target));
+      });
+    }, {threshold: [0.5]});
+    centeredTextRef.current && observer.observe(centeredTextRef.current);
+  }, [centeredTextRef]);
+
   return (
     <div
+      ref={centeredTextRef}
       className={`${
         appWidth < 300
           ? "p-16 pb-48"
@@ -12,13 +28,7 @@ export default function CenteredText({ appWidth, visible, title, content1, conte
           ? "p-48 pb-96"
           : "p-64 pb-96"
       } d-flex-column ai-center`}
-      style={
-        appWidth < 950
-          ? { transition: 'opacity .8s', opacity: visible ? '1' : '0' }
-          : appWidth < 2000
-          ? { transition: 'opacity .8s', opacity: visible ? '1' : '0' }
-          : { transition: 'opacity .8s', opacity: visible ? '1' : '0' }
-      }
+      style={{ transition: 'opacity .3s ease-out, transform .5s ease-out', opacity: visible ? '1' : '0', transform: visible ? 'translateY(0%)' : 'translateY(30%)' }}
     >
       <div
         className={`${
