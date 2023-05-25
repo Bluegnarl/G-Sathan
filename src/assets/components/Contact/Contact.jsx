@@ -49,10 +49,10 @@ export default function Contact({ visible, appWidth, appHeight }) {
       </div>
       <div className={`${ appWidth < 391 ? 'mt-40' : 'mt-64' } pos-relative d-flex-row jc-center`}>
         <div onMouseOver={() => setHover(true)} onMouseOut={() => setHover(false)} className={`${ styles.formButton } d-flex-column ai-center br-8`} style={{ zIndex: '1', padding: appWidth < 391 ? '7px 10px 7px 10px' : '10px 16px 10px 16px' }}>
-          <p className={`${ appWidth < 160 ? 'fs-9' : appWidth < 210 ? 'fs-11' : appWidth < 300 ? 'fs-12' : appWidth < 391 ? 'fs-14' : appWidth < 1100 ? 'fs-16' : 'fs-20' } ${ appWidth < 391 ? 'pb-3' : 'pb-5'} fw-500`}>Envie d'un tatouage ?</p>
-          <p className={`${ appWidth < 160 ? 'fs-5' : appWidth < 210 ? 'fs-7' : appWidth < 300 ? 'fs-9' : appWidth < 391 ? 'fs-11' : appWidth < 1100 ? 'fs-12' : 'fs-16' } ${ appWidth < 391 ? 'pt-3' : 'pt-5'} fw-400`}>Prenez rendez-vous via ce formulaire !</p>
+          <p className={`${ appWidth < 160 ? 'fs-9' : appWidth < 210 ? 'fs-11' : appWidth < 300 ? 'fs-12' : appWidth < 391 ? 'fs-14' : appWidth < 1100 ? 'fs-16' : 'fs-20' } ${ appWidth < 391 ? 'pb-3' : 'pb-5'} fw-500`} style={{ userSelect: 'none' }}>Envie d'un tatouage ?</p>
+          <p className={`${ appWidth < 160 ? 'fs-5' : appWidth < 210 ? 'fs-7' : appWidth < 300 ? 'fs-9' : appWidth < 391 ? 'fs-11' : appWidth < 1100 ? 'fs-12' : 'fs-16' } ${ appWidth < 391 ? 'pt-3' : 'pt-5'} fw-400`} style={{ userSelect: 'none' }}>Prenez rendez-vous via ce formulaire !</p>
         </div>
-        <img className="pos-absolute" src={form} style={{ transform: hover ? 'translateY(-70%)' : 'translateY(-30%)', width: appWidth < 250 ? '25px' : appWidth < 391 ? '35px' : '45px', transition: '.3s' }} />
+        <img className="pos-absolute" src={form} style={{ userSelect: 'none', transform: hover ? 'translateY(-70%)' : 'translateY(-30%)', width: appWidth < 250 ? '25px' : appWidth < 391 ? '35px' : '45px', transition: '.3s' }} />
       </div>
     </div>
   );
