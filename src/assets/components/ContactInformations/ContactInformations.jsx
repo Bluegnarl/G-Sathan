@@ -1,22 +1,39 @@
 import etiquette from "../../images/etiquette.svg";
 
 export default function ContactInformations({
+  appInfo,
   appWidth,
   icon,
   title,
   content,
   iconWidth,
-  className = ''
+  className = "",
 }) {
   return (
     <div className={`d-flex-column m-16 ${className}`}>
-      <div className={`${ appWidth < 391 ? 'mb-5' : appWidth < 950 ? 'mb-8' : 'mb-16' } pos-relative d-flex-row ai-center jc-center`}>
-        <img src={etiquette} style={{ width: appWidth < 391 ? '35px' : appWidth < 1100 ? '50px' : appWidth < 1650 ? '65px' : '70px' }} />
+      <div
+        className={`${
+          appWidth < 391 ? "mb-5" : appWidth < 950 ? "mb-8" : "mb-16"
+        } pos-relative d-flex-row ai-center jc-center`}
+      >
+        <img
+          src={etiquette}
+          style={{
+            width:
+              appWidth < 391
+                ? "35px"
+                : appWidth < 1100
+                ? "50px"
+                : appWidth < 1650
+                ? "65px"
+                : "70px",
+          }}
+        />
         <img
           src={icon}
           alt="Régions disponible"
           className="pos-absolute"
-          style={{ zIndex: '1', width: `${iconWidth}` }}
+          style={{ zIndex: "1", width: `${iconWidth}` }}
         />
       </div>
       <div className="d-flex-column ai-center">

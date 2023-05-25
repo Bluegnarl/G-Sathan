@@ -1,6 +1,6 @@
 import redlogo from "../../images/redlogo.webp";
 
-export default function About({ appWidth, visible, display }) {
+export default function About({ appInfo, appWidth, visible, display }) {
   return (
     <div
       className={`${
