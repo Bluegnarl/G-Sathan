@@ -5,12 +5,12 @@ export default function About({ appWidth, visible, display }) {
     <div
       className={`${
         appWidth < 300
-          ? "p-16"
-          : appWidth < 950
-          ? "p-32"
+          ? "p-16 pb-48"
+          : appWidth < 1100
+          ? "p-32 pb-48"
           : appWidth < 1650
-          ? "p-48"
-          : "p-64"
+          ? "p-48 pb-96"
+          : "p-64 pb-96"
       } d-flex-column jc-center`}
       style={
         appWidth < 950

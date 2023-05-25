@@ -8,6 +8,7 @@ import { useState } from "react";
 import About from "./assets/components/About/About";
 import Portfolio from "./assets/components/Portfolio/Portfolio";
 import CenteredText from "./assets/components/CenteredText/CenteredText";
+import Contact from './assets/components/Contact/Contact'
 import Footer from "./assets/components/Footer/Footer";
 
 export default function App() {
@@ -42,6 +43,7 @@ export default function App() {
       <About display='none' visible={visible} appWidth={appWidth} appHeight={appHeight}/>
       <Portfolio visible={visible} appWidth={appWidth} appHeight={appHeight}/>
       <CenteredText visible={visible} appWidth={appWidth} appHeight={appHeight} title={'Attention'} content1={`L'acte est relativement intime car il s'agit d'une altération définitive de l'intégrité physique.`} content2={`Il est important de le comprendre avant d'envisager quoique ce soit.`}/>
+      <Contact visible={visible} appWidth={appWidth} appHeight={appHeight} />
       <CenteredText visible={visible} appWidth={appWidth} appHeight={appHeight} title={'Activités'} content1={`En plus du tatouage, je travaille également sur des commandes d'illustrations et de produits dérivées.`} content2={``}/>
       <Footer />
     </div>

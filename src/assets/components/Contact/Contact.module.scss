@@ -1,0 +1,11 @@
+@use '../../styles/variables' as colors;
+
+.formButton{
+  border: 2px solid #990A0A;
+  transition: all .4s;
+  background-color: colors.$surface-1;
+  &:hover{
+    cursor: pointer;
+    background-color: colors.$primary;
+  }
+}
