@@ -112,7 +112,7 @@ export default function CenteredText({ appInfo, appWidth, title, content1, conte
         } w-full fw-300`}
       >
         <p className="d-flex-column w-full ta-center">
-          {content1}{appWidth > 605 ? (<br/>) : (' ')}{content2}
+          {content1}{appWidth > 605 && (<br/>)}{content2}
         </p>
       </div>
     </div>
