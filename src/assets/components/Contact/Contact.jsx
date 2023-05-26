@@ -48,13 +48,10 @@ export default function Contact({ appInfo, appWidth, appHeight }) {
     >
       <div
         className={styles.contactInformations}
-        style={{
-          transition: "opacity .30s ease-in-out, transform .35s ease-in-out",
-          opacity: visible ? "1" : "0",
-          transform: visible ? "translateY(0%)" : "translateY(20%)",
-        }}
       >
         <ContactInformations
+          latence='0s'
+          visible={visible}
           appInfo={appInfo}
           appWidth={appWidth}
           icon={ping}
@@ -65,6 +62,8 @@ export default function Contact({ appInfo, appWidth, appHeight }) {
           content="Belgique, Ardennes"
         />
         <ContactInformations
+          latence='.1s'
+          visible={visible}
           appInfo={appInfo}
           appWidth={appWidth}
           icon={arobase}
@@ -75,6 +74,8 @@ export default function Contact({ appInfo, appWidth, appHeight }) {
           content="Réseaux sociaux, mail, formulaire"
         />
         <ContactInformations
+          latence='.2s'
+          visible={visible}
           appInfo={appInfo}
           appWidth={appWidth}
           icon={agenda}
@@ -91,7 +92,7 @@ export default function Contact({ appInfo, appWidth, appHeight }) {
           appWidth < 391 ? "mt-40" : "mt-64"
         } pos-relative d-flex-row jc-center`}
         style={{
-          transition: "opacity .35s ease-in-out, transform .35s ease-in-out",
+          transition: "opacity .3s ease-out .35s, transform .3s ease-out .35s",
           opacity: visible ? "1" : "0",
           transform: visible ? "scale(100%)" : "scale(80%)",
         }}

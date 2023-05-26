@@ -7,10 +7,17 @@ export default function ContactInformations({
   title,
   content,
   iconWidth,
+  visible,
+  latence,
   className = "",
 }) {
   return (
-    <div className={`d-flex-column m-16 ${className}`}>
+    <div className={`d-flex-column m-16 ${className}`}
+    style={{
+      transition: `opacity .3s ease-in-out ${latence}, transform .35s ease-in-out ${latence}`,
+      opacity: visible ? "1" : "0",
+      transform: visible ? "translateY(0%)" : "translateY(20%)",
+    }}>
       <div
         className={`${
           appWidth < 391 ? "mb-5" : appWidth < 950 ? "mb-8" : "mb-16"

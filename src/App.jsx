@@ -99,7 +99,7 @@ export default function App() {
         content1={`En plus du tatouage, je travaille également sur des commandes d'illustrations et de produits dérivées.`}
         content2={``}
       />
-      <Footer appInfo={appInfo} />
+      <Footer appInfo={appInfo} appWidth={appWidth} />
     </div>
   );
 }

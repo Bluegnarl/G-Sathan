@@ -19,6 +19,7 @@ html{
   color: color.$on-surface;
   align-items: center;
   font-size: 1.4rem;
+  overflow-x: hidden;
   overflow-y: scroll;
   font-family: 'Roboto', sans-serif;
   &::-webkit-scrollbar {

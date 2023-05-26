@@ -113,7 +113,7 @@ export default function Portfolio({ appInfo, appWidth }) {
         }}
       >
         <div
-          className="d-flex-row w-full h-full jc-center b-test br-8"
+          className="d-flex-row w-full h-full jc-center b-surface-3 br-8"
           style={{ minHeight: "60vh" }}
         ></div>
       </div>
