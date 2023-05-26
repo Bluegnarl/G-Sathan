@@ -37,7 +37,7 @@ export default function Footer({ appInfo, appWidth }) {
       <div className="d-flex-row ai-center m-32">
         <SocialMedia socialMedia='@gerard_sathan' socialMediaLink='https://www.instagram.com/gerard_sathan' socialMediaIcon={instagram} socialMediaName='Instagram' appWidth={appWidth} />
         <SocialMedia socialMedia='gerardsathantattoosandartworks' socialMediaLink='https://www.facebook.com/gerardsathantattoosandartworks' socialMediaIcon={facebook} socialMediaName='Facebook' appWidth={appWidth} />
-        <SocialMedia socialMedia='g.sathantattoo@gmail.com' socialMediaLink='https://instagram.com/gerard_sathan' socialMediaIcon={mail} socialMediaName='Gmail' appWidth={appWidth} />
+        <SocialMedia socialMedia='g.sathantattoo@gmail.com' socialMediaLink='mailto:g.sathantattoo@gmail.com' socialMediaIcon={mail} socialMediaName='Gmail' appWidth={appWidth} />
       </div>
       <p className={`${
           appWidth < 175

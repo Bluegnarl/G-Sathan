@@ -2,7 +2,7 @@ export default function SocialMedia({ socialMedia, socialMediaLink, socialMediaI
     return(
         <div className="d-flex-row ai-center b-surface-3 m-5" style={{ borderRadius: '150px' }}>
             <img className="pl-12" style={{ width: '35px' }} src={socialMediaIcon} alt={socialMediaName} />
-            <a href={socialMediaLink} className={`${
+            <a href={socialMediaLink} target='_blank' className={`${
           appWidth < 160
             ? "fs-7"
             : appWidth < 300
