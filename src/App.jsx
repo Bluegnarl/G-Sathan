@@ -76,7 +76,6 @@ export default function App() {
         appHeight={appHeight}
       />
       <About
-        appInfo={appInfo}
         display="none"
         visible={visible}
         appWidth={appWidth}

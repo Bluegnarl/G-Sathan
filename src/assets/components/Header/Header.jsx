@@ -2,7 +2,7 @@ import headerImage from "../../images/header.webp";
 import logo from "../../images/logo.svg";
 import About from "../About/About";
 
-export default function Header({ visible, appWidth, appHeight }) {
+export default function Header({ appInfo, visible, appWidth, appHeight }) {
   return (
     <div
       className={`${
@@ -27,10 +27,10 @@ export default function Header({ visible, appWidth, appHeight }) {
         className="d-flex-row jc-center"
         style={{ flex: "1", display: appWidth < 950 ? "none" : "flex" }}
       >
-        <About appWidth={appWidth} visible={visible} />
+        <About visible={visible} appWidth={appWidth} />
       </div>
       <div
-        className="pos-relative w-zero d-flex-row ai-center jc-center overflow-hidden"
+        className={`${ appWidth > 950 && 'w-zero' } pos-relative d-flex-row ai-center jc-center overflow-hidden`}
         style={
           appWidth < 180
             ? {
@@ -99,20 +99,11 @@ export default function Header({ visible, appWidth, appHeight }) {
       >
         <img
           src={headerImage}
-          style={
-            appWidth < 950
-              ? {
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  objectPosition: "0 0",
-                }
-              : {
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                }
-          }
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
         />
         <div
           className="pos-absolute"
@@ -136,15 +127,116 @@ export default function Header({ visible, appWidth, appHeight }) {
                 }
           }
         ></div>
-        <div className="pos-absolute d-flex-row ai-center" style={{ transition: 'opacity .8s ease-out' }}>
-          <h1 className={`${ appWidth < 180 ? 'fs-12' : appWidth < 200 ? 'fs-14' : appWidth < 250 ? 'fs-16' : appWidth < 300 ? 'fs-20' : appWidth < 350 ? 'fs-22' : appWidth < 391 ? 'fs-24' : appWidth < 430 ? 'fs-28' : appWidth < 490 ? 'fs-32' : appWidth < 550 ? 'fs-36' : appWidth < 650 ? 'fs-40' : appWidth < 950 ? 'fs-48' : appWidth < 1200 ? 'fs-40' : appWidth < 1500 ? 'fs-48' : 'fs-56'} ff-title fw-500 box-shadow`}>tattoos</h1>
+        <div
+          className="pos-absolute d-flex-row ai-center"
+          style={{ transition: "opacity .8s ease-out" }}
+        >
+          <h1
+            className={`${
+              appWidth < 180
+                ? "fs-12"
+                : appWidth < 200
+                ? "fs-14"
+                : appWidth < 250
+                ? "fs-16"
+                : appWidth < 300
+                ? "fs-20"
+                : appWidth < 350
+                ? "fs-22"
+                : appWidth < 391
+                ? "fs-24"
+                : appWidth < 430
+                ? "fs-28"
+                : appWidth < 490
+                ? "fs-32"
+                : appWidth < 550
+                ? "fs-36"
+                : appWidth < 650
+                ? "fs-40"
+                : appWidth < 950
+                ? "fs-48"
+                : appWidth < 1200
+                ? "fs-40"
+                : appWidth < 1500
+                ? "fs-48"
+                : "fs-56"
+            } ff-title fw-500 box-shadow`}
+          >
+            tattoos
+          </h1>
           <img
-            className={`${ appWidth < 250 ? 'pl-8' : appWidth < 391 ? 'pl-12' : 'pl-20' } box-shadow`}
-            style={{ transition: 'width .6s ease-in-out', width: appWidth < 180 ? '50px' : appWidth < 200 ? '55px' : appWidth < 220 ? '60px' : appWidth < 250 ? '70px' : appWidth < 300 ? '80px' : appWidth < 350 ? '90px' : appWidth < 391 ? '110px' : appWidth < 430 ? '130px' : appWidth < 490 ? '140px' : appWidth < 550 ? '160px' : appWidth < 650 ? '180px' : appWidth < 950 ? '200px' : appWidth < 1200 ? '140px' : appWidth < 1500 ? '200px' : '250px' }}
+            className={`${
+              appWidth < 250 ? "pl-8" : appWidth < 391 ? "pl-12" : "pl-20"
+            } box-shadow`}
+            style={{
+              transition: "width .6s ease-in-out",
+              width:
+                appWidth < 180
+                  ? "50px"
+                  : appWidth < 200
+                  ? "55px"
+                  : appWidth < 220
+                  ? "60px"
+                  : appWidth < 250
+                  ? "70px"
+                  : appWidth < 300
+                  ? "80px"
+                  : appWidth < 350
+                  ? "90px"
+                  : appWidth < 391
+                  ? "110px"
+                  : appWidth < 430
+                  ? "130px"
+                  : appWidth < 490
+                  ? "140px"
+                  : appWidth < 550
+                  ? "160px"
+                  : appWidth < 650
+                  ? "180px"
+                  : appWidth < 950
+                  ? "200px"
+                  : appWidth < 1200
+                  ? "140px"
+                  : appWidth < 1500
+                  ? "200px"
+                  : "250px",
+            }}
             src={logo}
             alt="Tattoos Artworks"
           />
-          <h1 className={`${ appWidth < 180 ? 'fs-12' : appWidth < 200 ? 'fs-14' : appWidth < 250 ? 'fs-16' : appWidth < 300 ? 'fs-20' : appWidth < 350 ? 'fs-22' : appWidth < 391 ? 'fs-24' : appWidth < 430 ? 'fs-28' : appWidth < 490 ? 'fs-32' : appWidth < 550 ? 'fs-36' : appWidth < 650 ? 'fs-40' : appWidth < 950 ? 'fs-48' : appWidth < 1200 ? 'fs-40' : appWidth < 1500 ? 'fs-40' : 'fs-56'} ff-title fw-500 box-shadow`} >artworks</h1>
+          <h1
+            className={`${
+              appWidth < 180
+                ? "fs-12"
+                : appWidth < 200
+                ? "fs-14"
+                : appWidth < 250
+                ? "fs-16"
+                : appWidth < 300
+                ? "fs-20"
+                : appWidth < 350
+                ? "fs-22"
+                : appWidth < 391
+                ? "fs-24"
+                : appWidth < 430
+                ? "fs-28"
+                : appWidth < 490
+                ? "fs-32"
+                : appWidth < 550
+                ? "fs-36"
+                : appWidth < 650
+                ? "fs-40"
+                : appWidth < 950
+                ? "fs-48"
+                : appWidth < 1200
+                ? "fs-40"
+                : appWidth < 1500
+                ? "fs-40"
+                : "fs-56"
+            } ff-title fw-500 box-shadow`}
+          >
+            artworks
+          </h1>
         </div>
       </div>
     </div>

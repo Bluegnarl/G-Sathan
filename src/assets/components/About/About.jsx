@@ -1,6 +1,6 @@
 import redlogo from "../../images/redlogo.webp";
 
-export default function About({ appInfo, appWidth, visible, display }) {
+export default function About({ appWidth, visible, display }) {
   return (
     <div
       className={`${
@@ -12,13 +12,16 @@ export default function About({ appInfo, appWidth, visible, display }) {
           ? "p-48 pb-96"
           : "p-64 pb-96"
       } d-flex-column jc-center`}
-      style={
-        appWidth < 950
-          ? { maxWidth: "850px", transition: 'opacity .8s', opacity: visible ? '1' : '0' }
-          : appWidth < 2000
-          ? { maxWidth: "900px", display: display, transition: 'opacity .8s', opacity: visible ? '1' : '0' }
-          : { maxWidth: "1500px", display: display, transition: 'opacity .8s', opacity: visible ? '1' : '0' }
-      }
+      style={{
+        maxWidth:
+          appWidth < 950 ? "850px" : appWidth < 2000 ? "900px" : "1500px",
+        display: appWidth < 950 ? "flex" : display,
+        transition:
+          appWidth < 950
+            ? "opacity .6s ease-in-out .2s"
+            : "opacity .5s ease-out .1s",
+        opacity: visible ? "1" : "0",
+      }}
     >
       <div
         className={`${
@@ -28,6 +31,8 @@ export default function About({ appInfo, appWidth, visible, display }) {
             ? "pt-20 pb-16"
             : appWidth < 950
             ? "pt-24 pb-20"
+            : appWidth < 1100
+            ? "pb-20"
             : "pb-28"
         } d-flex-row`}
       >

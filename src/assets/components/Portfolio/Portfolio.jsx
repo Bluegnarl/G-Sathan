@@ -71,7 +71,7 @@ export default function Portfolio({ appInfo, appWidth }) {
             } ff-title`}
             style={{
               zIndex: "1",
-              transition: "opacity .3s ease-out, transform .3s ease-out",
+              transition: "opacity .6s ease-out .15s, transform .6s ease-out .1s",
               opacity: visible ? "1" : "0",
               transform: visible ? "translateX(0%)" : "translateX(50%)",
             }}
@@ -97,7 +97,7 @@ export default function Portfolio({ appInfo, appWidth }) {
                   ? "100px"
                   : "120px",
               transition:
-                "opacity .1s ease-out .2s, transform .15s ease-out .2s",
+                "opacity .6s ease-out .3s, transform .25s ease-out .5s",
               opacity: visible ? "1" : "0",
               transform: visible ? "scale(100%)" : "scale(0%)",
             }}
