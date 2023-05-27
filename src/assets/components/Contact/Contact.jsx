@@ -8,7 +8,7 @@ import arobase from "../../images/arobase.svg";
 import agenda from "../../images/agenda.svg";
 import form from "../../images/form.svg";
 
-export default function Contact({ appInfo, appWidth, appHeight }) {
+export default function Contact({ appInfo, appWidth }) {
   const [hover, setHover] = useState(false);
 
   const contactRef = useRef(null);

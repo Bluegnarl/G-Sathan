@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export default function SocialMedia({
   socialMedia,
   socialMediaLink,
@@ -5,10 +7,14 @@ export default function SocialMedia({
   socialMediaName,
   appWidth,
 }) {
+  const [hover, setHover] = useState(false);
+
   return (
     <div
       className="d-flex-row ai-center b-surface-3 m-5"
-      style={{ borderRadius: "150px" }}
+      style={{ borderRadius: "150px", transform: hover ? 'scale(105%)' : 'scale(100%)', transition: 'transform .2s ease-out' }}
+      onMouseOver={() => setHover(true)}
+      onMouseOut={() => setHover(false)}
     >
       <img
         className={`${

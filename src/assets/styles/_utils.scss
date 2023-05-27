@@ -1,3 +1,5 @@
+@use './variables' as color;
+
 // padding
 
 .p-5{
@@ -456,6 +458,12 @@
   cursor: pointer;
 }
 
+// user select
+
+.user-select-none{
+  user-select: none;
+}
+
 // position
 
 .pos-absolute{
@@ -478,4 +486,24 @@
 
 .box-shadow{
   filter: drop-shadow(3px 3px 3px rgba(0,0,0,1));
+}
+
+// webkit scrollbar
+
+.scrollbar-none{
+  &::-webkit-scrollbar{
+    display: none;
+  }
+}
+
+// hover sliderImage
+
+.hover-slider-image{
+  border: 2px solid color.$on-surface-variant;
+  transition: transform .2s ease-out;
+  transform:  translate3d(0px,0px,0px) rotateY(0deg) perspective(100px) scale(.94);
+  cursor: pointer;
+  &:hover{
+    transform:  perspective(100px) translate3d(0px,-1px,0px) rotateY(-1.5deg) scale(.94);
+  }
 }

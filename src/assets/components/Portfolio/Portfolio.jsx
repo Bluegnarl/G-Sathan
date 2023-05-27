@@ -5,6 +5,7 @@ import redstar from "../../images/redstar.svg";
 
 export default function Portfolio({ appInfo, appWidth }) {
   const portfolioRef = useRef(null);
+  const sliderRef = useRef(null);
 
   const [visible, setVisible] = useState(false);
   useEffect(() => {
@@ -25,6 +26,41 @@ export default function Portfolio({ appInfo, appWidth }) {
     });
     portfolioRef.current && observer.observe(portfolioRef.current);
   }, [portfolioRef, appInfo]);
+
+  const [scroll, setScroll] = useState(0);
+  const [state, setState] = useState('left_collapsed')
+
+  function scrollSet(side) {
+    const maxScroll =
+        sliderRef.current.scrollWidth - sliderRef.current.clientWidth,
+      scrollLeft = sliderRef.current.scrollLeft;
+    if (side === "left" && scroll > 0) {
+      setScroll(scrollLeft - 700);
+      setState('none');
+    } else if (side === "right" && scroll < maxScroll) {
+      setScroll(scrollLeft + 700);
+      setState('none');
+    } else if (scroll <= 0){
+      setState('left_collapsed');
+      setScroll(0);
+    } else if (scroll >= maxScroll){
+      setState('right_collapsed');
+      setScroll(maxScroll);
+    }
+  }
+
+  useEffect(() => {
+    const maxScroll = sliderRef.current.scrollWidth - sliderRef.current.clientWidth;
+    sliderRef.current.scrollTo({
+      left: scroll,
+      behavior: "smooth",
+    });
+    if(scroll >= maxScroll){
+      setState('right_collapsed')
+    } else if(scroll <= 0){
+      setState('left_collapsed')
+    }
+  }, [scroll, sliderRef]);
 
   return (
     <div
@@ -49,9 +85,24 @@ export default function Portfolio({ appInfo, appWidth }) {
             : appWidth < 1100
             ? "pb-20"
             : "pb-28"
-        } d-flex-row`}
-        style={{ justifyContent: "flex-end" }}
+        } d-flex-row jc-space-between ai-center`}
       >
+        <div>
+          <span
+            onClick={() => scrollSet("left")}
+            className="material-symbols-outlined cursor-pointer p-5 user-select-none"
+            style={{ opacity: state === 'left_collapsed' ? '0.5' : '1' }}
+          >
+            arrow_back
+          </span>
+          <span
+            onClick={() => scrollSet("right")}
+            className="material-symbols-outlined cursor-pointer p-5 user-select-none"
+            style={{ opacity: state === 'right_collapsed' ? '0.5' : '1' }}
+          >
+            arrow_forward
+          </span>
+        </div>
         <div className="pos-relative d-flex-row ai-center jc-center">
           <p
             className={`${
@@ -71,7 +122,8 @@ export default function Portfolio({ appInfo, appWidth }) {
             } ff-title`}
             style={{
               zIndex: "1",
-              transition: "opacity .6s ease-out .15s, transform .6s ease-out .1s",
+              transition:
+                "opacity .6s ease-out .15s, transform .6s ease-out .1s",
               opacity: visible ? "1" : "0",
               transform: visible ? "translateX(0%)" : "translateX(50%)",
             }}
@@ -105,17 +157,30 @@ export default function Portfolio({ appInfo, appWidth }) {
         </div>
       </div>
       <div
-        className="d-flex-column w-full jc-space-between h-full"
+        ref={sliderRef}
+        className="d-flex-row w-full jc-space-between scrollbar-none"
         style={{
           transition: "opacity .3s ease-out .4s, transform .3s ease-out .4s",
           opacity: visible ? "1" : "0",
           transform: visible ? "translateY(0%)" : "translateY(20%)",
+          overflowX: "scroll",
+          overflowY: "none",
         }}
       >
-        <div
-          className="d-flex-row w-full h-full jc-center b-surface-3 br-8"
-          style={{ minHeight: "60vh" }}
-        ></div>
+        {illustrations.map((item) => (
+          <img
+            key={item.id}
+            src={item.src}
+            alt={item.alt}
+            className="mr-24 hover-slider-image"
+            style={{
+              height: "700px",
+              minWidth: "500px",
+              objectFit: "cover",
+              borderRadius: "16px",
+            }}
+          />
+        ))}
       </div>
     </div>
   );
