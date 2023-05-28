@@ -44,7 +44,7 @@ export default function Contact({ appInfo, appWidth }) {
           : appWidth < 1650
           ? "p-48"
           : "p-64"
-      } d-flex-column ai-center mb-48`}
+      } d-flex-column ai-center mb-72`}
     >
       <div
         className={styles.contactInformations}
