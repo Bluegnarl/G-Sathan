@@ -4,14 +4,8 @@ export default function About({ appWidth, visible, display }) {
   return (
     <div
       className={`${
-        appWidth < 300
-          ? "p-16 pb-48"
-          : appWidth < 1100
-          ? "p-32 pb-48"
-          : appWidth < 1650
-          ? "p-48 pb-96"
-          : "p-64 pb-96"
-      } d-flex-column jc-center`}
+        appWidth < 1100 ? "p-32" : appWidth < 1650 ? "p-48" : "p-64"
+      } d-flex-column jc-center mb-48`}
       style={{
         maxWidth:
           appWidth < 950 ? "850px" : appWidth < 2000 ? "900px" : "1500px",

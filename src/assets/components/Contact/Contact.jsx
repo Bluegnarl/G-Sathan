@@ -38,13 +38,13 @@ export default function Contact({ appInfo, appWidth }) {
       ref={contactRef}
       className={`${
         appWidth < 391
-          ? "pb-48"
+          ? ""
           : appWidth < 1100
-          ? "p-20 pb-48"
+          ? "p-20"
           : appWidth < 1650
-          ? "p-48 pb-96"
-          : "p-64 pb-96"
-      } d-flex-column ai-center`}
+          ? "p-48"
+          : "p-64"
+      } d-flex-column ai-center mb-48`}
     >
       <div
         className={styles.contactInformations}

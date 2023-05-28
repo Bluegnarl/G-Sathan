@@ -69,13 +69,13 @@ export default function Portfolio({ appInfo, appWidth }) {
       className={`${
         (appWidth < 950 && "pt-40",
         appWidth < 300
-          ? "p-16 mb-48"
+          ? "p-16"
           : appWidth < 1100
-          ? "p-32 mb-48"
+          ? "p-32"
           : appWidth < 1650
-          ? "p-48 mb-48"
-          : "p-64 mb-48")
-      } d-flex-column w-full`}
+          ? "p-48"
+          : "p-64")
+      } d-flex-column w-full mb-48`}
     >
       <div
         className={`${
@@ -183,23 +183,31 @@ export default function Portfolio({ appInfo, appWidth }) {
             key={item.id}
             src={item.src}
             alt={item.alt}
-            className={`${ appWidth < 600 ? 'mr-5' : appWidth < 950 ? 'mr-12' : appWidth < 1200 ? 'mr-16' : 'mr-24'} hover-slider-image object-fit-cover br-16`}
+            className={`${
+              appWidth < 600
+                ? "mr-5"
+                : appWidth < 950
+                ? "mr-12"
+                : appWidth < 1200
+                ? "mr-16"
+                : "mr-24"
+            } hover-slider-image object-fit-cover br-16`}
             style={
               appWidth < 200
-              ? { height: "150px", minWidth: "100px" }
-              : appWidth < 300
-              ? { height: "200px", minWidth: "150px" }
-              : appWidth < 500
-              ? { height: "250px", minWidth: "190px" }
-              : appWidth < 600
-              ? { height: "300px", minWidth: "230px" }
-              : appWidth < 950
-              ? { height: "350px", minWidth: "250px" }
-              : appWidth < 1100
-              ? { height: "400px", minWidth: "300px" }
-              : appWidth < 1200
-              ? { height: "450px", minWidth: "350px" }
-              : appWidth < 1650
+                ? { height: "150px", minWidth: "110px" }
+                : appWidth < 300
+                ? { height: "220px", minWidth: "150px" }
+                : appWidth < 500
+                ? { height: "250px", minWidth: "175px" }
+                : appWidth < 600
+                ? { height: "300px", minWidth: "230px" }
+                : appWidth < 950
+                ? { height: "350px", minWidth: "250px" }
+                : appWidth < 1100
+                ? { height: "400px", minWidth: "300px" }
+                : appWidth < 1200
+                ? { height: "450px", minWidth: "350px" }
+                : appWidth < 1650
                 ? { height: "550px", minWidth: "400px" }
                 : { height: "700px", minWidth: "500px" }
             }

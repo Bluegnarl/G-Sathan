@@ -30,13 +30,13 @@ export default function CenteredText({ appInfo, appWidth, title, content1, conte
       ref={centeredTextRef}
       className={`${
         appWidth < 300
-          ? "p-16 pb-48"
+          ? "p-16"
           : appWidth < 1100
-          ? "p-32 pb-48"
+          ? "p-32"
           : appWidth < 1650
-          ? "p-48 pb-96"
-          : "p-64 pb-96"
-      } d-flex-column ai-center`}
+          ? "p-48"
+          : "p-64"
+      } d-flex-column ai-center mb-48`}
       style={{ transition: 'opacity .25s ease-out, transform .3s ease-out', opacity: visible ? '1' : '0', transform: visible ? 'translateY(0%)' : 'translateY(30%)' }}
     >
       <div
