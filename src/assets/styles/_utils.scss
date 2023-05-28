@@ -359,6 +359,9 @@
 .mb-16{
   margin-bottom: 1.6rem;
 }
+.mb-20{
+  margin-bottom: 2rem;
+}
 .mb-24{
   margin-bottom: 2.4rem;
 }
@@ -425,6 +428,15 @@
 
 .br-8{
   border-radius: 0.8rem;
+}
+.br-16{
+  border-radius: 1.6rem;
+}
+
+// objectfit cover
+
+.object-fit-cover{
+  object-fit: cover;
 }
 
 // bg image

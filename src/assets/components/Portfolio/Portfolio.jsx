@@ -28,7 +28,7 @@ export default function Portfolio({ appInfo, appWidth }) {
   }, [portfolioRef, appInfo]);
 
   const [scroll, setScroll] = useState(0);
-  const [state, setState] = useState('left_collapsed')
+  const [state, setState] = useState("left_collapsed");
 
   function scrollSet(side) {
     const maxScroll =
@@ -36,29 +36,30 @@ export default function Portfolio({ appInfo, appWidth }) {
       scrollLeft = sliderRef.current.scrollLeft;
     if (side === "left" && scroll > 0) {
       setScroll(scrollLeft - 700);
-      setState('none');
+      setState("none");
     } else if (side === "right" && scroll < maxScroll) {
       setScroll(scrollLeft + 700);
-      setState('none');
-    } else if (scroll <= 0){
-      setState('left_collapsed');
+      setState("none");
+    } else if (scroll <= 0) {
+      setState("left_collapsed");
       setScroll(0);
-    } else if (scroll >= maxScroll){
-      setState('right_collapsed');
+    } else if (scroll >= maxScroll) {
+      setState("right_collapsed");
       setScroll(maxScroll);
     }
   }
 
   useEffect(() => {
-    const maxScroll = sliderRef.current.scrollWidth - sliderRef.current.clientWidth;
+    const maxScroll =
+      sliderRef.current.scrollWidth - sliderRef.current.clientWidth;
     sliderRef.current.scrollTo({
       left: scroll,
       behavior: "smooth",
     });
-    if(scroll >= maxScroll){
-      setState('right_collapsed')
-    } else if(scroll <= 0){
-      setState('left_collapsed')
+    if (scroll >= maxScroll) {
+      setState("right_collapsed");
+    } else if (scroll <= 0) {
+      setState("left_collapsed");
     }
   }, [scroll, sliderRef]);
 
@@ -68,42 +69,52 @@ export default function Portfolio({ appInfo, appWidth }) {
       className={`${
         (appWidth < 950 && "pt-40",
         appWidth < 300
-          ? "p-16 pb-48"
+          ? "p-16 mb-48"
           : appWidth < 1100
-          ? "p-32 pb-48"
+          ? "p-32 mb-48"
           : appWidth < 1650
-          ? "p-48 pb-96"
-          : "p-64 pb-96")
+          ? "p-48 mb-48"
+          : "p-64 mb-48")
       } d-flex-column w-full`}
     >
       <div
         className={`${
-          appWidth < 300
-            ? "pb-12"
-            : appWidth < 391
-            ? "pb-16"
-            : appWidth < 1100
-            ? "pb-20"
-            : "pb-28"
-        } d-flex-row jc-space-between ai-center`}
+          appWidth < 391 ? "mb-16" : appWidth < 1100 ? "mb-20" : "mb-24"
+        } ${appWidth < 650 ? "jc-flex-end" : " jc-space-between"} d-flex-row`}
       >
-        <div>
+        <div className={`${appWidth < 650 ? "d-none" : "d-flex-row ml-12"}`}>
           <span
             onClick={() => scrollSet("left")}
-            className="material-symbols-outlined cursor-pointer p-5 user-select-none"
-            style={{ opacity: state === 'left_collapsed' ? '0.5' : '1' }}
+            className={`${
+              appWidth < 300 ? "fs-16" : appWidth < 1100 ? "fs-24" : "fs-32"
+            } material-symbols-outlined cursor-pointer p-5 user-select-none`}
+            style={{
+              color: state === "left_collapsed" ? "#212121" : "#FFFFFF",
+              opacity: visible ? "1" : "0",
+              transform: visible ? "scale(100%)" : "scale(80%)",
+              transition:
+                "color .2s ease-out, opacity .3s ease-out .15s, transform .3s .2s",
+            }}
           >
             arrow_back
           </span>
           <span
             onClick={() => scrollSet("right")}
-            className="material-symbols-outlined cursor-pointer p-5 user-select-none"
-            style={{ opacity: state === 'right_collapsed' ? '0.5' : '1' }}
+            className={`${
+              appWidth < 300 ? "fs-16" : appWidth < 1100 ? "fs-24" : "fs-32"
+            } material-symbols-outlined cursor-pointer p-5 user-select-none`}
+            style={{
+              color: state === "right_collapsed" ? "#212121" : "#FFFFFF",
+              opacity: visible ? "1" : "0",
+              transform: visible ? "scale(100%)" : "scale(80%)",
+              transition:
+                "color .2s ease-out, opacity .3s ease-out .15s, transform .3s .2s",
+            }}
           >
             arrow_forward
           </span>
         </div>
-        <div className="pos-relative d-flex-row ai-center jc-center">
+        <div className={`pos-relative d-flex-row ai-center jc-center`}>
           <p
             className={`${
               appWidth < 160
@@ -172,13 +183,26 @@ export default function Portfolio({ appInfo, appWidth }) {
             key={item.id}
             src={item.src}
             alt={item.alt}
-            className="mr-24 hover-slider-image"
-            style={{
-              height: "700px",
-              minWidth: "500px",
-              objectFit: "cover",
-              borderRadius: "16px",
-            }}
+            className={`${ appWidth < 600 ? 'mr-5' : appWidth < 950 ? 'mr-12' : appWidth < 1200 ? 'mr-16' : 'mr-24'} hover-slider-image object-fit-cover br-16`}
+            style={
+              appWidth < 200
+              ? { height: "150px", minWidth: "100px" }
+              : appWidth < 300
+              ? { height: "200px", minWidth: "150px" }
+              : appWidth < 500
+              ? { height: "250px", minWidth: "190px" }
+              : appWidth < 600
+              ? { height: "300px", minWidth: "230px" }
+              : appWidth < 950
+              ? { height: "350px", minWidth: "250px" }
+              : appWidth < 1100
+              ? { height: "400px", minWidth: "300px" }
+              : appWidth < 1200
+              ? { height: "450px", minWidth: "350px" }
+              : appWidth < 1650
+                ? { height: "550px", minWidth: "400px" }
+                : { height: "700px", minWidth: "500px" }
+            }
           />
         ))}
       </div>
