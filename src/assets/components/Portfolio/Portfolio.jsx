@@ -169,7 +169,7 @@ export default function Portfolio({ appInfo, appWidth }) {
       </div>
       <div
         ref={sliderRef}
-        className="d-flex-row w-full jc-space-between scrollbar-none"
+        className={`${ appWidth < 650 ? 'scrollbar-none' : 'scrollbar' } d-flex-row w-full jc-space-between`}
         style={{
           transition: "opacity .3s ease-out .4s, transform .3s ease-out .4s",
           opacity: visible ? "1" : "0",
