@@ -14,7 +14,7 @@ export default function Form({ form, setForm, appWidth }) {
     }),
     sendTo = "dradarkx@gmail.com",
     mailSubject = `Demande%20de%20tatouage%20envoyée%20depuis%20le%20Formulaire%20par%20${formData.name}`,
-    mailBody = `Nom%20complet%20:%20${formData.name}%0AAdresse%20:%20${formData.address}%0A%0ALe tatouage%0AEmplacement%20:%20${formData.position}%0ADescriptif du projet%20:%20${formData.description}%0ARemarques addionelles%20:%20${formData.more}`,
+    mailBody = `Nom%20complet%20:%20${formData.name}%0AAdresse%20:%20${formData.address}%0A%0ALe tatouage%0AEmplacement%20:%20${formData.position}%0ADescriptif du projet%20:%20${formData.description}%0ARemarques addionelles%20:%20${formData.more}%0A%0A`,
     handleSubmit = (e) => {
       e.preventDefault();
       setForm(false)
