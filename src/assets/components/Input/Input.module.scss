@@ -1,0 +1,73 @@
+@use '../../styles/variables' as colors;
+
+.container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input_container{
+  border-radius: 8px 8px 0 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 56px;
+  background: colors.$surface-4;
+  transition: none;
+  border-bottom: 1px solid colors.$on-surface;
+  &.focused{
+    border-bottom: 2px solid colors.$primary-1;
+  }
+}
+
+.label{
+  position: absolute;
+  color: colors.$on-surface;
+  pointer-events: none;
+  font-weight: 400;
+  font-size: 16px;
+  transition: left .3s ease-out, top .3s ease-out;
+  &.focused {
+    color: colors.$primary-1;
+    padding: 0 6px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  &.filled{
+    color: colors.$on-surface;
+    padding: 0 6px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+
+.input{
+  margin-top: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  color: colors.$on-surface;
+  font-size: 16px;
+  font-weight: 400;
+  top: 15px;
+  left: 12px;
+  &.focused {
+    color: colors.$primary-1;
+    font-size: 12px;
+  }
+  &.filled{
+    color: colors.$on-surface;
+    font-size: 12px;
+  }
+}
+
+.hover {
+  &:hover {
+    transition: border-bottom .2s ease-out;
+    border-bottom: 1px solid colors.$primary-2;
+  }
+}

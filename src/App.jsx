@@ -1,10 +1,10 @@
 import "./default.scss";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
+import Menu from './assets/components/Menu/Menu'
+import Form from './assets/components/Form/Form'
 import Header from "./assets/components/Header/Header";
-import { useEffect } from "react";
-import { useState } from "react";
 import About from "./assets/components/About/About";
 import Portfolio from "./assets/components/Portfolio/Portfolio";
 import CenteredText from "./assets/components/CenteredText/CenteredText";
@@ -61,6 +61,8 @@ export default function App() {
     appRef.current && observer.observe(appRef.current);
   }, [appRef]);
 
+  const [form, setForm] = useState(false);
+
   return (
     <div
       className="App"
@@ -69,6 +71,8 @@ export default function App() {
         setAppInfo({ ...appInfo, scroll: e.target.scrollTop });
       }}
     >
+      {/* <Menu appWidth={appWidth} visible={visible} /> */}
+      <Form form={form} setForm={setForm} appWidth={appWidth} />
       <Header
         appInfo={appInfo}
         visible={visible}
@@ -90,7 +94,7 @@ export default function App() {
         content1={`L'acte est relativement intime car il s'agit d'une altération définitive de l'intégrité physique.`}
         content2={`Il est important de le comprendre avant d'envisager quoique ce soit.`}
       />
-      <Contact appInfo={appInfo} appWidth={appWidth} appHeight={appHeight} />
+      <Contact setForm={setForm} appInfo={appInfo} appWidth={appWidth} appHeight={appHeight} />
       <CenteredText
         appInfo={appInfo}
         appWidth={appWidth}

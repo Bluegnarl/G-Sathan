@@ -1,0 +1,16 @@
+@use '../../styles/variables' as colors;
+
+.menu{
+  background: colors.$surface-2;
+  &:hover{
+    background: colors.$surface-3;
+  }
+}
+
+.close{
+  color: colors.$on-surface;
+  transition: color .2s;
+  &:hover{
+    color: colors.$primary;
+  }
+}

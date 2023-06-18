@@ -8,7 +8,7 @@ import arobase from "../../images/arobase.svg";
 import agenda from "../../images/agenda.svg";
 import form from "../../images/form.svg";
 
-export default function Contact({ appInfo, appWidth }) {
+export default function Contact({ appInfo, appWidth, setForm }) {
   const [hover, setHover] = useState(false);
 
   const contactRef = useRef(null);
@@ -100,6 +100,7 @@ export default function Contact({ appInfo, appWidth }) {
         <div
           onMouseOver={() => setHover(true)}
           onMouseOut={() => setHover(false)}
+          onClick={() => setForm(true)}
           className={`${styles.formButton} d-flex-column ai-center br-8`}
           style={{
             zIndex: "1",

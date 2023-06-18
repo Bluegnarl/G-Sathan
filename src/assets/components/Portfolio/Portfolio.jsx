@@ -191,7 +191,7 @@ export default function Portfolio({ appInfo, appWidth }) {
                 : appWidth < 1200
                 ? "mr-16"
                 : "mr-24"
-            } hover-slider-image object-fit-cover br-16`}
+            } hover-slider-image object-fit-cover br-16 blue-highlight`}
             style={
               appWidth < 200
                 ? { height: "150px", minWidth: "110px" }
